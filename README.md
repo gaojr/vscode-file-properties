@@ -9,12 +9,12 @@ This package is intended for use with the [Visual Studio Code](https://code.visu
 ## Features
 
 - Show filesize on the status bar.
-- Show the number of words on the status bar.
+- Show the number of words (Chinese and English) on the status bar.
 - Show the number of lines on the status bar.
 
 Screenshots:
 
-![screenshot](screenshot.jpg)
+![screenshot](screenshot.png)
 
 ## Contributing
 

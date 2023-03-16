@@ -51,8 +51,7 @@ function dealInfo(document: TextDocument): string {
     words: getWordCount(document),
     lines: document.lineCount,
   };
-
-  return `大小 ${info.prettySize}, 行数 ${info.lines}, 字数 ${info.words}`;
+  return `大小 ${info.prettySize}，行数 ${info.lines}，字数 ${info.words}`;
 }
 
 function showStatusBarItem(text: string): void {

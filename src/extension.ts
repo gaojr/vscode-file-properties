@@ -1,4 +1,4 @@
-import { window, workspace, TextDocument, StatusBarItem, StatusBarAlignment, ExtensionContext } from 'vscode';
+import { window, workspace, TextDocument, StatusBarItem, StatusBarAlignment, ExtensionContext, l10n } from 'vscode';
 import { statSync } from 'fs';
 
 const BASE = 1024;
@@ -45,12 +45,7 @@ function dealInfo(document: TextDocument): string {
   } catch (e) {
     throw Error('Please provide a valid filepath');
   }
-  let info = {
-    prettySize: getPrettySize(stats.size),
-    words: getWordCount(document),
-    lines: document.lineCount,
-  };
-  return `大小 ${info.prettySize}，行数 ${info.lines}，字数 ${info.words}`;
+  return l10n.t("Size {0}, Lines {1}, Words {2}", getPrettySize(stats.size), getWordCount(document), document.lineCount);
 }
 
 function showStatusBarItem(text: string): void {

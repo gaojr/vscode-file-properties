@@ -3,11 +3,15 @@
   "displayName": "File Properties",
   "description": "Show the current file properties in the status bar",
   "version": "1.0.0",
-  "icon": "icon.png",
   "publisher": "gaojr",
   "repository": {
     "type": "git",
     "url": "https://github.com/gaojr/vscode-file-properties"
+  },
+  "icon": "icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.54.0"
   },
   "keywords": [
     "file",
@@ -15,10 +19,6 @@
     "fileproperties",
     "status bar"
   ],
-  "license": "MIT",
-  "engines": {
-    "vscode": "^1.54.0"
-  },
   "categories": [
     "Other"
   ],
@@ -27,11 +27,6 @@
     "onLanguage:plaintext"
   ],
   "main": "./out/extension.js",
-  "contributes": {
-    "commands": [],
-    "keybindings": [],
-    "configuration": {}
-  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

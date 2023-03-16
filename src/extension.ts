@@ -2,7 +2,7 @@ import { window, workspace, TextDocument, StatusBarItem, StatusBarAlignment, Ext
 import { statSync } from 'fs';
 
 const BASE = 1024;
-const SUFIXES = [
+const SUFFIXES = [
   'bytes',
   'KB',
   'MB',
@@ -20,10 +20,9 @@ function getPrettySize(size: number): string {
     return '0 bytes';
   }
   let scale = Math.floor(Math.log(size) / Math.log(BASE));
-  let activeSuffix = SUFIXES[scale];
   let scaledSize = size / Math.pow(BASE, scale);
-  let fixedScale = Number(scaledSize.toFixed(2));
-  return `${fixedScale} ${activeSuffix}`;
+  let fixedScale = scaledSize.toFixed(2); // round to 2 decimal places
+  return `${fixedScale} ${SUFFIXES[scale]}`;
 }
 
 function getWordCount(doc: TextDocument): number {
@@ -79,7 +78,7 @@ function updateStatusBarItem(): void {
   try {
     let editor = window.activeTextEditor;
     let doc = editor && editor.document;
-    if (doc && (doc.languageId === 'markdown' || doc.languageId === 'plaintext')) {
+    if (doc) {
       showStatusBarItem(dealInfo(doc));
       return;
     }

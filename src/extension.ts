@@ -78,7 +78,7 @@ function updateStatusBarItem(): void {
   try {
     let editor = window.activeTextEditor;
     let doc = editor && editor.document;
-    if (doc) {
+    if (doc && (doc.languageId === 'markdown' || doc.languageId === 'plaintext')) {
       showStatusBarItem(dealInfo(doc));
       return;
     }

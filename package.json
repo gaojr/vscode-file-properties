@@ -2,7 +2,7 @@
   "name": "vscode-file-properties",
   "displayName": "File Properties",
   "description": "Show the current file properties in the status bar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "gaojr",
   "repository": {
     "type": "git",

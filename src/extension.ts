@@ -45,7 +45,7 @@ function dealInfo(document: TextDocument): string {
   } catch (e) {
     throw Error('Please provide a valid filepath');
   }
-  return l10n.t("Size {0}, Lines {1}, Words {2}", getPrettySize(stats.size), getWordCount(document), document.lineCount);
+  return l10n.t("Size {0}, Lines {1}, Words {2}", getPrettySize(stats.size), document.lineCount, getWordCount(document));
 }
 
 function showStatusBarItem(text: string): void {
